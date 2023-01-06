@@ -7,18 +7,17 @@
 <title>visit counter</title>
 </head>
 <body>
-	<%
+	<% 
 	int count = 0;
-	//서버 시작 후 최초 요청
+	//서버 시작후 최초 요청
 	if(application.getAttribute("count") == null){
 		count = 1;
-		application.setAttribute("count", count);
 	}
-	else{
-		count = (int)application.getAttribute("count") + 1;
-		application.setAttribute("count", count);
+	else{//서버 시작후 2번째 이후 요청
+		count = (Integer)application.getAttribute("count")+1;
 	}
+	application.setAttribute("count", count);
 	%>
-	<h1>서버 시작 후 <%=count %>번째 방문자입니다.</h1>
+	<h1> 서버 시작후 <%=count %>번째 방문자입니다. </h1>
 </body>
 </html>

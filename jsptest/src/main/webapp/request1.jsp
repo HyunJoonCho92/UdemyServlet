@@ -8,19 +8,19 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<%
-	String id = request.getParameter("id");
+	<% 
+	String id = request.getParameter("id"); 
 	String pw = request.getParameter("pw");
 	String name = request.getParameter("name");
-	
 	MemberDTO dto = new MemberDTO();
 	dto.setId(id);
 	dto.setPw(pw);
 	dto.setName(name);
 	out.println("무시");
+	RequestDispatcher rd = request.getRequestDispatcher("request2.jsp");
+	request.setAttribute("dto", dto);
+	rd.forward(request, response);
 	
-	RequestDispatcher rd = new RequestDispatcher("request2.jsp");
-		
 	%>
 </body>
 </html>

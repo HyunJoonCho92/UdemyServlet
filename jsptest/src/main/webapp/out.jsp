@@ -14,7 +14,8 @@
 	<%= Integer.parseInt(request.getParameter("name")) %>
 	<h1>예외 발생 시 취소합니다.</h1>
 	<h1>버퍼크기 : <%= out.getBufferSize() %></h1>
-
+	
+	
 </body>
 </html>
 

@@ -8,8 +8,9 @@
 </head>
 <body>
 	<%
-	int num = Integer.parseInt(request.getParameter("num"));
 	request.setAttribute("file", request.getRequestURI());
+	int num = Integer.parseInt(request.getParameter("num")); //오류발생-forward
+	
 	%>
 	<h1>결과 = <%=num %></h1>
 </body>
