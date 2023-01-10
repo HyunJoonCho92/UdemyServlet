@@ -7,11 +7,13 @@
 <title>Insert title here</title>
 </head>
 <body>
+	<h1> admin.jsp 입니다.</h1>
+	<h2> 관리자용 메뉴는 다음과 같습니다. </h2>
 	<%
-	String menu[] = {"회원관리", "게시판관리", "쇼핑몰관리", "챗봇관리"};
-	int index = Integer.parseInt(request.getParameter("menu"));
+	String[] menu = (String[])request.getAttribute("menu");
+	for(String m : menu){
+		out.println("<h3>" + m + "</h3>");
+	}
 	%>
-	<h1>선택한 메뉴이름 = <%= menu[index-1] %></h1>
-
 </body>
 </html>

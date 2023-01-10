@@ -2,6 +2,8 @@ package dto;
 
 public class MemberDTO {
 	
+	//html form(parameter명) 입력 --- dto
+	
 	String id, pw, name, email, phone, address, indate;
 	
 	// 자바 - int, double, date, String

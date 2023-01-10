@@ -153,7 +153,7 @@ public class MemberDAO {
 //			 "INSERT(pw, 2, char_length(pw)-1, repeat(\"*\", char_length(pw) - 1)) AS pw, "
 			String sql = 
 				"SELECT id, insert(pw, 2, char_length(pw)-1, repEAT(\"*\",char_length(pw)-1 ) ) as pw, "
-			  + " name, indate FROM MEMBER ORDER BY INDATE LIMIT ?, ?";//1행 1열(null / 숫자)
+			  + " name, address, indate FROM MEMBER ORDER BY INDATE LIMIT ?, ?";//1행 1열(null / 숫자)
 			
 			pt = con.prepareStatement(sql);
 			
@@ -168,6 +168,7 @@ public class MemberDAO {
 												rs.getString("indate"));
 				
 				dto.setPw(rs.getString("pw"));
+				dto.setAddress(rs.getString("address"));
 				result.add(dto);
 			}
 						
@@ -185,6 +186,7 @@ public class MemberDAO {
 	
 		return result;
 	} //getMemberList end
+	
 	
 	public MemberDTO getMember(String id, String pw){
 		
